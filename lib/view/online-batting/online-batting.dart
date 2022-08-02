@@ -189,7 +189,7 @@ class _OnlineBattingState extends State<OnlineBatting> {
                         ),
                       ),
                       Container(
-                        width: 600,
+                        width: 680,
                         height: 40,
                         child: ListView.builder(
 

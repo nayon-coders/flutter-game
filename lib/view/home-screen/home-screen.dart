@@ -1,22 +1,23 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
+import 'package:marquee/marquee.dart';
 import 'package:mboile_game/utility/colors.dart';
+import 'package:mboile_game/view/7up/seven-up-loading.dart';
 import 'package:mboile_game/view/andar-bahar/andar-bahar-loading.dart';
 import 'package:mboile_game/view/online-batting/online-batting.dart';
-import 'package:mboile_game/view/online-game/online-game-list.dart';
+import 'package:mboile_game/view/online-game/Turnaments.dart';
 import 'package:mboile_game/view/profile/profile.dart';
+import 'package:mboile_game/view/setting/full-shop.dart';
 import 'package:mboile_game/view/setting/setting.dart';
 import 'package:mboile_game/view/sign-in/sign-in.dart';
-import 'package:mboile_game/view/spring-game/snip-game-loading.dart';
-import 'package:mboile_game/view/spring-game/spin-game.dart';
 import 'package:mboile_game/view/wallet/add-money/wallets.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../widgets/left-logo.dart';
-import '../casino-game/casino.dart';
+import '../7up/7up.dart';
+import '../casino-game/car-rolet.dart';
 import '../setting/shop/shop.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -60,23 +61,26 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: appColors.mainColor,
       drawer: Drawer(
+        width: 260,
         child: Column(
           children: [
             Container(
-              height: 100,
-              padding: EdgeInsets.only(top: 20),
+              height: 80,
+              padding: EdgeInsets.only(top: 5, left: 20),
               decoration: BoxDecoration(
                 color: appColors.mainColor,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                )
+                // borderRadius: BorderRadius.only(
+                //   bottomLeft: Radius.circular(20),
+                // )
               ),
               child: Row(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Icon(
                     Icons.account_circle,
                     color: Colors.white,
-                    size: 80,
+                    size: 60,
                   ),
 
                   SizedBox(width: 15,),
@@ -101,19 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
 
                       ),
-                      InkWell(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
-                        },
-                        child: Text("View Profile",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 10.sp,
-                          ),
 
-                        ),
-                      ),
                     ],
                   )
                 ],
@@ -155,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                          height: 35, width: 35,
                        ),
                        SizedBox(width: 20,),
-                       Text("Andar Bahar-1", style: TextStyle(
+                       Text("Andar Bahar", style: TextStyle(
                          fontSize: 14.sp,
                          fontWeight: FontWeight.w600,
                          color: appColors.mainColor,
@@ -176,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                          height: 35, width: 35,
                        ),
                        SizedBox(width: 20,),
-                       Text("Andar Bahar-2", style: TextStyle(
+                       Text("Car Roulette", style: TextStyle(
                          fontSize: 14.sp,
                          fontWeight: FontWeight.w600,
                          color: appColors.mainColor,
@@ -187,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                ),
                InkWell(
                  onTap: (){
-                   Navigator.push(context, MaterialPageRoute(builder: (context)=>AndarBaharLoading()));
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>SevenUpLoading()));
                  },
                  child: Container(
                    padding: EdgeInsets.only(top:  10, bottom: 10, left: 15, right: 15),
@@ -197,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                          height: 35, width: 35,
                        ),
                        SizedBox(width: 20,),
-                       Text("Andar Bahar-3", style: TextStyle(
+                       Text("7 Up Down", style: TextStyle(
                          fontSize: 14.sp,
                          fontWeight: FontWeight.w600,
                          color: appColors.mainColor,
@@ -208,7 +200,9 @@ class _HomeScreenState extends State<HomeScreen> {
                ),
 
                InkWell(
-                 onTap: (){},
+                 onTap: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>TournamentList()));
+                 },
                  child: Container(
                    padding: EdgeInsets.only(top:  10, bottom: 10, left: 15, right: 15),
                    child: Row(
@@ -217,7 +211,7 @@ class _HomeScreenState extends State<HomeScreen> {
                          height: 35, width: 35,
                        ),
                        SizedBox(width: 20,),
-                       Text("Ludo Game", style: TextStyle(
+                       Text("Online Tournaments", style: TextStyle(
                          fontSize: 14.sp,
                          fontWeight: FontWeight.w600,
                          color: appColors.mainColor,
@@ -228,7 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
                ),
                InkWell(
                  onTap: (){
-                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Shop()));
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>FullShop()));
                  },
                  child: Container(
                    padding: EdgeInsets.only(top:  10, bottom: 10, left: 15, right: 15),
@@ -290,7 +284,9 @@ class _HomeScreenState extends State<HomeScreen> {
                ),
 
                InkWell(
-                 onTap: (){},
+                 onTap: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+                 },
                  child: Container(
                    color: appColors.mainColor,
                    padding: EdgeInsets.only(top:  10, bottom: 10, left: 15, right: 15),
@@ -410,123 +406,454 @@ class _HomeScreenState extends State<HomeScreen> {
         width: width,
         height: height,
         child: Container(
+          width: width,
+          height: height,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/image/bg.png"),
             )
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
+          child:  Container(
+            width: width,
+            height: height,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: width/3,
-                    height: 220,
-                    margin: EdgeInsets.only(top: height/10, left: 10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: appColors.white,
-                    ),
-                  ),
-                  SizedBox(height: 10,),
-
-                ],
-              ),
-              //SizedBox(height: 140,),
-
-              Container(
-                width: width/1.6,
-                height: 220,
-                child: CarouselSlider.builder(
-                  itemCount: images.length,
-                  options: CarouselOptions(
-                    height: 300,
-                    aspectRatio: 16/9,
-                    viewportFraction: 0.7,
-                    autoPlay: true,
-                    enlargeCenterPage: true,
-                    initialPage: 0,
-                    enableInfiniteScroll:true,
-                    reverse: false,
-                    autoPlayInterval: Duration(seconds: 5),
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    scrollDirection: Axis.horizontal,
-                  ),
-                  itemBuilder: (context, index, realIdx) {
-                    return  Container(
-                      height: 200,
-                      decoration: BoxDecoration(
-                          color: appColors.red,
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              image: NetworkImage(images[index]),
-                              fit: BoxFit.cover
-                          )
+                  Column(
+                    children: [
+                      Container(
+                        width: width/4,
+                        height: 270,
+                        margin: EdgeInsets.only( left: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: appColors.white,
+                        ),
                       ),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child:  Stack(
-                          clipBehavior: Clip.none,
-                          children: [
-                            Container(
-                              height: 50,
-                              width: width,
-                              padding: EdgeInsets.only(left: 50, right: 20,top: 10, bottom: 10),
-                              decoration: BoxDecoration(
-                                color: Color(0xff231750),
+                      SizedBox(height: 10,),
+
+                    ],
+                  ),
+                  //SizedBox(height: 140,),
+                  SizedBox(width: 20,),
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            width: 200,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                color: appColors.red,
                                 borderRadius: BorderRadius.circular(20),
-
-                              ),
-                              child: Text(
-                                "ABC",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    color: appColors.white,
-                                    fontFamily: "Nanu",
-                                    fontSize: 12.sp
-                                ),
-                              ),
+                                image: DecorationImage(
+                                    image: NetworkImage(images[0]),
+                                    fit: BoxFit.cover
+                                )
                             ),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child:  Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Container(
+                                    width: width,
+                                    padding: EdgeInsets.only(left: 20, right: 20,top: 5, bottom: 5),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff231750),
+                                      borderRadius: BorderRadius.circular(20),
 
-                            Positioned(
-                              right: 0,
-                              bottom: 10,
-                              child:  Container(
-                                height: 50,
-                                width: MediaQuery.of(context).size.width/7,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF40FFAF),
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Center(
-                                  child: Shimmer.fromColors(
-                                    baseColor: appColors.mainColor,
-                                    highlightColor: Colors.white,
+                                    ),
                                     child: Text(
-                                      "Play",
+                                      "ABC",
+                                      textAlign: TextAlign.left,
                                       style: TextStyle(
-                                          color: appColors.mainColor,
+                                          color: appColors.white,
                                           fontFamily: "Nanu",
-                                          fontSize: 15.sp
+                                          fontSize: 12.sp
                                       ),
                                     ),
                                   ),
-                                ),
+
+                                  Positioned(
+                                    right: 0,
+                                    bottom: 10,
+                                    child:  Container(
+                                      height: 30,
+                                      width: MediaQuery.of(context).size.width/9,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF40FFAF),
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Center(
+                                        child: Shimmer.fromColors(
+                                          baseColor: appColors.mainColor,
+                                          highlightColor: Colors.white,
+                                          child: Text(
+                                            "Play",
+                                            style: TextStyle(
+                                                color: appColors.mainColor,
+                                                fontFamily: "Nanu",
+                                                fontSize: 15.sp
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          SizedBox(width: 20,),
+                          Container(
+                            width: 200,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                color: appColors.red,
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: NetworkImage(images[1]),
+                                    fit: BoxFit.cover
+                                )
+                            ),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child:  Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Container(
+                                    width: width,
+                                    padding: EdgeInsets.only(left: 20, right: 20,top: 5, bottom: 5),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff231750),
+                                      borderRadius: BorderRadius.circular(20),
+
+                                    ),
+                                    child: Text(
+                                      "ABC",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: appColors.white,
+                                          fontFamily: "Nanu",
+                                          fontSize: 12.sp
+                                      ),
+                                    ),
+                                  ),
+
+                                  Positioned(
+                                    right: 0,
+                                    bottom: 10,
+                                    child:  Container(
+                                      height: 30,
+                                      width: MediaQuery.of(context).size.width/9,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF40FFAF),
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Center(
+                                        child: Shimmer.fromColors(
+                                          baseColor: appColors.mainColor,
+                                          highlightColor: Colors.white,
+                                          child: Text(
+                                            "Play",
+                                            style: TextStyle(
+                                                color: appColors.mainColor,
+                                                fontFamily: "Nanu",
+                                                fontSize: 15.sp
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 20,),
+                          Container(
+                            width: 200,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                color: appColors.red,
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: NetworkImage(images[3]),
+                                    fit: BoxFit.cover
+                                )
+                            ),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child:  Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Container(
+                                    width: width,
+                                    padding: EdgeInsets.only(left: 20, right: 20,top: 5, bottom: 5),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff231750),
+                                      borderRadius: BorderRadius.circular(20),
+
+                                    ),
+                                    child: Text(
+                                      "ABC",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: appColors.white,
+                                          fontFamily: "Nanu",
+                                          fontSize: 12.sp
+                                      ),
+                                    ),
+                                  ),
+
+                                  Positioned(
+                                    right: 0,
+                                    bottom: 10,
+                                    child:  Container(
+                                      height: 30,
+                                      width: MediaQuery.of(context).size.width/9,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF40FFAF),
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Center(
+                                        child: Shimmer.fromColors(
+                                          baseColor: appColors.mainColor,
+                                          highlightColor: Colors.white,
+                                          child: Text(
+                                            "Play",
+                                            style: TextStyle(
+                                                color: appColors.mainColor,
+                                                fontFamily: "Nanu",
+                                                fontSize: 15.sp
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                        ],
                       ),
-                    );
-                  },
-                ),
-              )
+
+                      SizedBox(height: 30,),
+
+                      Row(
+                        children: [
+                          Container(
+                            width: 200,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                color: appColors.red,
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: NetworkImage(images[0]),
+                                    fit: BoxFit.cover
+                                )
+                            ),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child:  Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Container(
+                                    width: width,
+                                    padding: EdgeInsets.only(left: 20, right: 20,top: 5, bottom: 5),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff231750),
+                                      borderRadius: BorderRadius.circular(20),
+
+                                    ),
+                                    child: Text(
+                                      "ABC",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: appColors.white,
+                                          fontFamily: "Nanu",
+                                          fontSize: 12.sp
+                                      ),
+                                    ),
+                                  ),
+
+                                  Positioned(
+                                    right: 0,
+                                    bottom: 10,
+                                    child:  Container(
+                                      height: 30,
+                                      width: MediaQuery.of(context).size.width/9,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF40FFAF),
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Center(
+                                        child: Shimmer.fromColors(
+                                          baseColor: appColors.mainColor,
+                                          highlightColor: Colors.white,
+                                          child: Text(
+                                            "Play",
+                                            style: TextStyle(
+                                                color: appColors.mainColor,
+                                                fontFamily: "Nanu",
+                                                fontSize: 15.sp
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 20,),
+                          Container(
+                            width: 200,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                color: appColors.red,
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: NetworkImage(images[0]),
+                                    fit: BoxFit.cover
+                                )
+                            ),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child:  Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Container(
+                                    width: width,
+                                    padding: EdgeInsets.only(left: 20, right: 20,top: 5, bottom: 5),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff231750),
+                                      borderRadius: BorderRadius.circular(20),
+
+                                    ),
+                                    child: Text(
+                                      "ABC",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: appColors.white,
+                                          fontFamily: "Nanu",
+                                          fontSize: 12.sp
+                                      ),
+                                    ),
+                                  ),
+
+                                  Positioned(
+                                    right: 0,
+                                    bottom: 10,
+                                    child:  Container(
+                                      height: 30,
+                                      width: MediaQuery.of(context).size.width/9,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF40FFAF),
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Center(
+                                        child: Shimmer.fromColors(
+                                          baseColor: appColors.mainColor,
+                                          highlightColor: Colors.white,
+                                          child: Text(
+                                            "Play",
+                                            style: TextStyle(
+                                                color: appColors.mainColor,
+                                                fontFamily: "Nanu",
+                                                fontSize: 15.sp
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 20,),
+                          Container(
+                            width: 200,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                color: appColors.red,
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: NetworkImage(images[0]),
+                                    fit: BoxFit.cover
+                                )
+                            ),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child:  Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Container(
+                                    width: width,
+                                    padding: EdgeInsets.only(left: 20, right: 20,top: 5, bottom: 5),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff231750),
+                                      borderRadius: BorderRadius.circular(20),
+
+                                    ),
+                                    child: Text(
+                                      "ABC",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: appColors.white,
+                                          fontFamily: "Nanu",
+                                          fontSize: 12.sp
+                                      ),
+                                    ),
+                                  ),
+
+                                  Positioned(
+                                    right: 0,
+                                    bottom: 10,
+                                    child:  Container(
+                                      height: 30,
+                                      width: MediaQuery.of(context).size.width/9,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF40FFAF),
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Center(
+                                        child: Shimmer.fromColors(
+                                          baseColor: appColors.mainColor,
+                                          highlightColor: Colors.white,
+                                          child: Text(
+                                            "Play",
+                                            style: TextStyle(
+                                                color: appColors.mainColor,
+                                                fontFamily: "Nanu",
+                                                fontSize: 15.sp
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    ],
+                  ),
 
 
-
-            ],
+                ],
+              ),
+            ),
           ),
         )
       ),
@@ -537,18 +864,31 @@ class _HomeScreenState extends State<HomeScreen> {
         height: 40,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: appColors.white,
+          color: Colors.transparent,
         ),
-        child: Center(
-          child: Text("Notice",
-            style: TextStyle(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Nanu"
-            ),
-          ),
-        ),
+        child: buildMarquee(text: "Some sample text that takes some space.")
       ),
+    );
+  }
+
+   buildMarquee({required String text}) {
+    return Container(
+      padding: EdgeInsets.only(top: 7, left: 10, right: 10),
+      child: Marquee(
+          text: '${text}',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp, color: Colors.white),
+          scrollAxis: Axis.horizontal,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          blankSpace: 20.0,
+          velocity: 100.0,
+          pauseAfterRound: Duration(seconds: 1),
+          startPadding: 20.0,
+          accelerationDuration: Duration(seconds: 3),
+          accelerationCurve: Curves.linear,
+          decelerationDuration: Duration(milliseconds: 500),
+          decelerationCurve: Curves.easeOut,
+
+        ),
     );
   }
 

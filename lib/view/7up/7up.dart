@@ -2,16 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
-import 'package:mboile_game/utility/colors.dart';
-import 'package:mboile_game/view/andar-bahar/andar-baha-start.dart';
-import 'package:mboile_game/view/setting/setting.dart';
-import 'package:mboile_game/view/wallet/add-money/wallets.dart';
-import 'package:shimmer/shimmer.dart';
-import 'package:sizer/sizer.dart';
-import 'dart:async';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:mboile_game/utility/colors.dart';
 import 'package:mboile_game/view/andar-bahar/andar-baha-start.dart';
@@ -22,18 +12,17 @@ import 'package:mboile_game/widgets/tost.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../widgets/gradient-text.dart';
 import '../casino-game/json/icon-json.dart';
 
 
-class GetStartAndarBahar extends StatefulWidget {
-  const GetStartAndarBahar({Key? key}) : super(key: key);
+class SevenUp extends StatefulWidget {
+  const SevenUp({Key? key}) : super(key: key);
 
   @override
-  State<GetStartAndarBahar> createState() => _GetStartAndarBaharState();
+  State<SevenUp> createState() => _SevenUpState();
 }
 
-class _GetStartAndarBaharState extends State<GetStartAndarBahar> with SingleTickerProviderStateMixin {
+class _SevenUpState extends State<SevenUp> with SingleTickerProviderStateMixin {
   int value = 10;
   int setValu = 10;
 
@@ -119,121 +108,7 @@ class _GetStartAndarBaharState extends State<GetStartAndarBahar> with SingleTick
                     ),
                   ),
 
-                  Positioned(
-                      left: width/3.8,
-                      right: width/3.8,
-                      top: height/8,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
 
-                           GradientText(
-                            "12:0:5:6",
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Color(0xFFFFFFFF),
-                                  Color(0xFFA5C0AB),
-                                ]),
-                          ),
-                           GradientText(
-                            "12:0:5:6",
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Color(0xFFFFFFFF),
-                                  Color(0xFFA5C0AB),
-                                ]),
-                          ),
-                          GradientText(
-                            "12:0:5:6",
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Color(0xFFFFFFFF),
-                                  Color(0xFFA5C0AB),
-                                ]),
-                          ),
-                          GradientText(
-                            "12:0:5:6",
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Color(0xFFFFFFFF),
-                                  Color(0xFFA5C0AB),
-                                ]),
-                          ),
-
-
-                        ],
-                      )
-                  ),
-
-                  Positioned(
-                      left: width/3.8,
-                      right: width/3.8,
-                      bottom: height/7,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-
-                          GradientText(
-                            "12:0:5:6",
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Color(0xFFFFFFFF),
-                                  Color(0xFFA5C0AB),
-                                ]),
-                          ),
-                          GradientText(
-                            "12:0:5:6",
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Color(0xFFFFFFFF),
-                                  Color(0xFFA5C0AB),
-                                ]),
-                          ),
-                          GradientText(
-                            "12:0:5:6",
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Color(0xFFFFFFFF),
-                                  Color(0xFFA5C0AB),
-                                ]),
-                          ),
-                          GradientText(
-                            "12:0:5:6",
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Color(0xFFFFFFFF),
-                                  Color(0xFFA5C0AB),
-                                ]),
-                          ),
-
-
-                        ],
-                      )
-                  ),
 
 
                   //playsers
@@ -296,8 +171,8 @@ class _GetStartAndarBaharState extends State<GetStartAndarBahar> with SingleTick
                   const Text("Select Amount From The Left Side",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12
+                          color: Colors.white,
+                          fontSize: 12
                       )
                   ),
                   SizedBox(height: 2,),
@@ -371,20 +246,20 @@ class _GetStartAndarBaharState extends State<GetStartAndarBahar> with SingleTick
       actions: [
         PopupMenuButton<int>(
           onSelected: (value){
-           switch(value){
-             case 1:
-               Navigator.push(context, MaterialPageRoute(builder: (context)=>Wallets()));
-               break;
+            switch(value){
+              case 1:
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Wallets()));
+                break;
 
-             case 2:
-               //Navigator.push(context, MaterialPageRoute(builder: (context)=>Wallets()));
-               break;
-             case 3:
-               showExit();
-               break;
-             default:
-               return null;
-           }
+              case 2:
+              //Navigator.push(context, MaterialPageRoute(builder: (context)=>Wallets()));
+                break;
+              case 3:
+                showExit();
+                break;
+              default:
+                return null;
+            }
           },
 
           padding: EdgeInsets.zero,
@@ -503,132 +378,80 @@ class _GetStartAndarBaharState extends State<GetStartAndarBahar> with SingleTick
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            width: 92,
-            height: 82,
-            // decoration: BoxDecoration(
-            //   borderRadius: BorderRadius.only(
-            //       topLeft: Radius.circular(100),
-            //       bottomLeft: Radius.circular(100)
-            //   ),
-            //   border: SelectItemForBit.isNotEmpty &&
-            //       SelectItemForBit[0] == "1" ?
-            //   Border.all(width: 5, color: Color(0xFF088C25))
-            //       : Border.all(width: 0, color: Colors.transparent),
-            // ),
-            child: Center(
-                child: GradientText(
-
-                  "Andar\n1:2",
-                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFFFFFFFF),
-                        Color(0xFFA5C0AB),
-                      ]),
-                )
+          Bounce(
+            onPressed: ()=>selectBit("1"),
+            duration: Duration(milliseconds: 80),
+            child: Container(
+              width: 92,
+              height: 82,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(100), 
+                  bottomLeft: Radius.circular(100)
+                ),
+                border: SelectItemForBit.isNotEmpty &&
+                    SelectItemForBit[0] == "1" ?
+                    Border.all(width: 5, color: Color(0xFF088C25))
+                    : Border.all(width: 0, color: Colors.transparent),
+              ),
+              child: Center(
+                child: Text("2-6",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.sp
+                  ),
+                ),
+              ),
             ),
           ),
-
-          Container(
-            width: 118,
+          Bounce(
+          onPressed: ()=>selectBit("2"),
+          duration: Duration(milliseconds: 80),
+          child: Container(
+            width: 129,
             height: 89,
-            margin: EdgeInsets.only(left: 5, right: 5),
+            transform: Matrix4.translationValues(-0.0, 0.0, 0.0),
             decoration: BoxDecoration(
               border: SelectItemForBit.isNotEmpty &&
                   SelectItemForBit[0] == "2" ?
               Border.all(width: 5, color: Color(0xFF0B87A2))
                   : Border.all(width: 0, color: Colors.transparent),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 30,
-                      height: 45,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white.withOpacity(0.3)
-                      ),
-                    ),
-                     Text("Andar",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w900,
-                          fontSize: 10,
-                          color: Color(0xFF141F48).withOpacity(0.5)
-                      ),
-                    )
-                  ],
+            child: Center(
+              child: Text("7",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.sp
                 ),
-                Container(
-                  width: 40,
-                  height: 55,
-                  transform: Matrix4.translationValues(0.0, -8.0, 0.0),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.white.withOpacity(0.3)
-                  ),
-                  child: Image.asset("assets/image/andarbaharicon.png"),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 30,
-                      height: 45,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white.withOpacity(0.3)
-                      ),
-                    ),
-                     Text("Bahar",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w900,
-                          fontSize: 10,
-                          color: Color(0xFF141F48).withOpacity(0.5)
-                      ),
-                    )
-                  ],
-                ),
-
-              ],
+              ),
             ),
           ),
-
-          Container(
+          ),
+          Bounce(
+          onPressed: ()=>selectBit(3),
+          duration: Duration(milliseconds: 80),
+          child: Container(
             width: 94,
             height: 82,
-            // decoration: BoxDecoration(
-            //   borderRadius: BorderRadius.only(
-            //       topRight: Radius.circular(100),
-            //       bottomRight: Radius.circular(100)
-            //   ),
-            //   border: SelectItemForBit.isNotEmpty &&
-            //       SelectItemForBit[0] == "3" ?
-            //   Border.all(width: 5, color: Color(0xFF16343B))
-            //       : Border.all(width: 0, color: Colors.transparent),
-            // ),
-            child: Center(
-                child: GradientText(
-
-                  "Bahar\n1:2",
-                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFFFFFFFF),
-                        Color(0xFFA5C0AB),
-                      ]),
-                )
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(100),
+                  bottomRight: Radius.circular(100)
+              ),
+              border: SelectItemForBit.isNotEmpty &&
+                  SelectItemForBit[0] == "3" ?
+              Border.all(width: 5, color: Color(0xFF16343B))
+                  : Border.all(width: 0, color: Colors.transparent),
             ),
+            child: Center(
+              child: Text("8-12",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.sp
+                ),
+              ),
+            ),
+          ),
           ),
 
         ],
@@ -672,11 +495,7 @@ class _GetStartAndarBaharState extends State<GetStartAndarBahar> with SingleTick
     );
   }
 
-
 }
 
 //
-
-
-
 
